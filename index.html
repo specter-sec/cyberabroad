@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#f4f1e8">
+  <meta name="description" content="A sourced research tracker for international cybersecurity master's programs, costs, deadlines, language requirements and funding.">
+  <title>CyberAbroad — Cybersecurity Master's Tracker</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./src/app.mjs"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to programs</a>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="CyberAbroad home"><span class="brand-mark" aria-hidden="true">C<span>/</span></span><span>Cyber<span class="brand-light">Abroad</span></span></a>
+    <nav aria-label="Main navigation"><a href="#explore">Explore programs</a><a href="#method">How to use this</a></nav>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">Dark mode</button>
+  </header>
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="kicker"><span class="live-dot" aria-hidden="true"></span> GLOBAL STUDY / CYBERSECURITY</p>
+        <h1 id="hero-title">Your next move,<br><em>in a new world.</em></h1>
+        <p class="hero-intro">A clear-eyed guide to cybersecurity master’s programs around the world. Compare the fine print—not just the brochure.</p>
+        <div id="snapshot" class="snapshot">Loading research snapshot…</div>
+        <p class="byline">RESEARCHED BY <strong>IFTIKHAR</strong></p>
+      </div>
+      <div class="globe-art" aria-hidden="true"><span class="orbital orbit-one"></span><span class="orbital orbit-two"></span><span class="orbital orbit-three"></span><span class="globe-core"><b>CYBER</b><b>ABROAD</b><i>· · ·</i></span><span class="axis axis-h"></span><span class="axis axis-v"></span><span class="globe-tag">RESEARCH<br>NOT PROMISES</span></div>
+      <div class="hero-bottom"><span>FIELD NOTES <b>01 — 30</b></span><span>DESTINATIONS <b>10 COUNTRIES</b></span><span>OPEN DATA <b>OFFICIAL SOURCES</b></span></div>
+    </section>
+    <section id="explore" class="explore" aria-labelledby="explore-title">
+      <div class="section-heading"><div><p class="kicker">FIND YOUR FIT</p><h2 id="explore-title">Programs with<br><em>the details attached.</em></h2></div><p class="section-note">Tuition is shown in each program’s original currency. Unknown fields stay unknown—never guessed.</p></div>
+      <div class="notice" role="note"><span class="notice-icon" aria-hidden="true">i</span><p>Verify fees, deadlines and eligibility on official sites. Unknown ≠ free; IELTS overall is not full eligibility; currencies are not converted.</p></div>
+      <div class="filters" aria-label="Filter programs">
+        <label class="search-field"><span>Search</span><input id="search" type="search" placeholder="University, program or country" autocomplete="off"></label>
+        <label><span>Country</span><select id="country"><option value="">All countries</option></select></label>
+        <label><span>Degree</span><select id="degree"><option value="">All degrees</option><option value="Masters">Masters</option><option value="Bachelors">Bachelors</option><option value="PhD">PhD</option></select></label>
+        <label><span>Sort by</span><select id="sort"><option value="university">University name</option><option value="deadline">Deadline (soonest first)</option><option value="tuition">Tuition (grouped by currency)</option></select></label>
+        <div class="budget-group"><label><span>Budget currency</span><select id="currency"><option value="">Choose currency</option></select></label><label><span>Max annual tuition</span><input id="max-budget" type="number" min="0" step="any" inputmode="decimal" placeholder="No limit"></label><p class="micro">Applies only within selected currency; unknown fees are excluded.</p></div>
+        <label><span>IELTS overall score</span><input id="ielts-max" type="number" min="0" max="9" step="0.5" inputmode="decimal" placeholder="No score filter"></label>
+        <label class="check-filter"><input id="scholarships-only" type="checkbox"><span>Named scholarships listed</span></label>
+        <label class="check-filter"><input id="shortlist-only" type="checkbox"><span>Shortlist only</span></label>
+        <button id="reset" class="button button-muted" type="button">Reset filters</button>
+      </div>
+      <div class="results-bar"><p id="result-count" aria-live="polite">Loading…</p><div class="results-actions"><button id="export" class="text-button" type="button">↓ Export filtered CSV</button><button id="compare-open" class="button button-dark" type="button">Compare (0)</button></div></div>
+      <noscript><div class="error-state"><h2>JavaScript is needed to explore the tracker.</h2><p>Enable JavaScript to load the public program dataset and use filters. The page does not use third-party scripts.</p></div></noscript>
+      <div id="live-status" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+      <div id="programs" class="program-grid" aria-live="polite" aria-busy="true"><div class="loading-state"><span class="loading-line"></span><p>Loading sourced programs…</p></div></div>
+    </section>
+    <section id="method" class="method" aria-labelledby="method-title">
+      <div><p class="kicker">READ THE SIGNALS</p><h2 id="method-title">Useful facts.<br><em>Honest unknowns.</em></h2></div>
+      <div class="method-copy"><p>Every listing links back to its sources and records when it was checked. Fees, application cycles and policies can change; this is a research starting point, not an admissions decision.</p><ul><li>A named scholarship is an opportunity, not a promise or a statement that you qualify.</li><li>An IELTS overall minimum does not capture band scores, exemptions or other accepted evidence.</li><li>Budget filtering never converts currencies. A missing fee cannot pass a budget cap.</li></ul></div>
+      <div class="signature">CYBERABROAD <span>·</span> IFTIKHAR <span>·</span> <time id="today"></time></div>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="wordmark" href="#top"><span class="brand-mark" aria-hidden="true">C<span>/</span></span><span>Cyber<span class="brand-light">Abroad</span></span></a><p>Research for the road ahead.</p><span>© CYBERABROAD</span></footer>
+  <dialog id="detail-dialog" aria-labelledby="detail-title"><div class="dialog-head"><span class="eyebrow">PROGRAM DOSSIER</span><form method="dialog"><button class="dialog-close" aria-label="Close program details">×</button></form></div><div id="detail-content" class="dialog-content"></div><div class="dialog-foot"><span>VERIFY DETAILS WITH OFFICIAL SOURCES</span><form method="dialog"><button class="button button-dark">Done</button></form></div></dialog>
+  <dialog id="compare-dialog" aria-labelledby="compare-title"><div class="dialog-head"><div><span class="eyebrow">SIDE-BY-SIDE</span><h2 id="compare-title">Compare programs</h2></div><form method="dialog"><button class="dialog-close" aria-label="Close comparison">×</button></form></div><div id="compare-content" class="dialog-content"></div><div class="dialog-foot"><span>UP TO THREE PROGRAMS</span><form method="dialog"><button class="button button-dark">Done</button></form></div></dialog>
+</body>
+</html>
